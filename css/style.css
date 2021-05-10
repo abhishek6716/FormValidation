@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+}
+
+.large-heading{
+    font-size: 2rem;
+}
+
+.container-fluid{
+    padding: 3% 15% 3%;
+}
+
+#head{
+    background-color: #d3e0ea;
+}
+
+.create-btn{
+    margin: 3% auto 3% auto;
+}
+
+#body{
+    background-color: #f6f5f5;
+    padding: 3%;
+}
+
+.report-title-row{
+    background-color: #bbdfc8;
+}
+
+
+.hr1{
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    width: 50%;
+}
+
+hr{
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+.report-title{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem
+}
+
+#tail{
+    background-color: #d3e0ea;
+    padding: 1%;   
+}
+
+.f1{
+    float: left;
+}
+
+.f1{
+    float: right;
+}
