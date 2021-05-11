@@ -1,9 +1,12 @@
 console.log('App is running')
 
+console.log('App is running')
+
 const firstName = document.getElementById('firstname')
 const lastName = document.getElementById('lastname')
 const email = document.getElementById('email')
 const mobileNo = document.getElementById('mobileno')
+const address = document.getElementById('address')
 const submit = document.getElementById('submit')
 
 
@@ -17,15 +20,13 @@ firstName.addEventListener('blur', () => {
     // console.log('first name is blurred')
 
     let regex = /^[a-zA-Z]{2,12}$/
-    let str = firstName.value 
+    let str = firstName.value
     // console.log(regex, str);
-    if(regex.test(str)){
+    if (regex.test(str)) {
         firstName.classList.remove('is-invalid')
         validFirstName = true
-    } else{
-        firstName.classList.add('is-invalid')
-        alert('Your first name is invalid!')
-        throw Error('Your first name is invalid!')
+    } else {
+        validFirstName = false
     }
 })
 
@@ -37,9 +38,7 @@ lastName.addEventListener('blur', () => {
         lastName.classList.remove('is-invalid')
         validLastName = true
     } else {
-        lastName.classList.add('is-invalid')
-        alert('Your last name is invalid!')
-        throw Error('Your last name is invalid!')
+        validLastName = false
     }
 })
 
@@ -51,9 +50,7 @@ email.addEventListener('blur', () => {
         email.classList.remove('is-invalid')
         validEmail = true
     } else {
-        email.classList.add('is-invalid')
-        alert('Your email is invalid!')
-        throw Error('Your email is invalid!')
+        validEmail = false
     }
 })
 
@@ -67,20 +64,29 @@ mobileNo.addEventListener('blur', () => {
         mobileNo.classList.remove('is-invalid')
         validMobileNo = true
     } else {
-        mobileNo.classList.add('is-invalid')
-        console.log('Your mobile number is not valid!')
-        throw Error('Your mobile number is not valid!')
+        validMobileNo = false
     }
 })
 
 submit.addEventListener('click', (e) => {
     e.preventDefault()
 
-    // console.log('you clicked on submit')
-    if(validFirstName && validLastName && validEmail && validMobileNo){
-        console.log('Everything is valid!')
-
-    } else{
-        console.log('Something is wrong please check again!')
+    if (!validFirstName) {
+        $("#firstname").focus();
+        alert("Enter your first name");
+    } else if (!validLastName) {
+        $("#lastname").focus();
+        alert("Enter your last name");
+    } else if (!validEmail) {
+        $("#email").focus();
+        alert("Enter your Email");
+    } else if (!validMobileNo) {
+        $("#mobileno").focus();
+        alert("Enter your Mobile No");
+    } else if (address == "") {
+        $("#address").focus();
+        alert("Enter your Address");
+    } else {
+        alert("data submiteed");
     }
 })
