@@ -52,6 +52,11 @@ document.getElementById('submit').addEventListener('click', () => {
     })
 
     saveForms(forms)
-    console.log('Form submitted successfully!')
-    alert('Your form is submitted successfully ;-)')
+
+    if (validFirstName && validLastName && validEmail && validMobileNo) {
+        console.log('Form submitted successfully!')
+        alert('Your form is submitted successfully ;-)')
+    } else {
+        console.log('Something went wrong please check again!')
+    }
 })

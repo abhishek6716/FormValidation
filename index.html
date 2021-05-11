@@ -37,14 +37,14 @@
                         <option value="male">Mr.</option>
                         <option value="female">Mrs.</option>
                     </select>
-                    <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" required />
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" onkeypress="return /[a-z]/i.test(event.key)"   required />
                     <small id="namevalid" class="form-text text-muted invalid-feedback">
                         your first name must be 2-10 character long and should not start with a number. 
                     </small>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name :</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" required />
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" onkeypress="return /[a-z]/i.test(event.key)"  required />
                     <small id="namevalid" class="form-text text-muted invalid-feedback">
                         your last name must be 2-10 character long and should not start with a number.
                     </small>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-group">
                     <label for="mobileNo">Mobile No :</label>
-                    <input type="text" class="form-control" id="mobileno" placeholder="Enter your mobile no" required />
+                    <input type="text" class="form-control" id="mobileno" placeholder="Enter your mobile no" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required />
                     <small id="mobileNovalid" class="form-text text-muted invalid-feedback">
                         your mobile number must be 10 digit long.
                     </small>
