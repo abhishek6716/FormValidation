@@ -1,7 +1,5 @@
 console.log('App is running')
 
-console.log('App is running')
-
 const firstName = document.getElementById('firstname')
 const lastName = document.getElementById('lastname')
 const email = document.getElementById('email')
