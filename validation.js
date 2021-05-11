@@ -78,7 +78,7 @@ submit.addEventListener('click', (e) => {
 
     // console.log('you clicked on submit')
     if(validFirstName && validLastName && validEmail && validMobileNo){
-        console.log('Everything is valid and form is submitted!')
+        console.log('Everything is valid!')
         
     } else{
         alert('Something is wrong please check again!')

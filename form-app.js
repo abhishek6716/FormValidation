@@ -2,14 +2,23 @@
 
 let forms = getSavedForms()
 
+let f0
 let f1
 let f2
 let f3
 let f4
 let f5
 
+document.getElementById('select').addEventListener('change', (e) => {
+    f0 = e.target.value
+})
+
 document.getElementById('firstname').addEventListener('change', (e) => {
-    f1 = e.target.value
+    if(e.target.value === 'Mr.'){
+        f0 = 'male'
+    } else{
+        f0 = 'female'
+    }
 })
 
 document.getElementById('lastname').addEventListener('change', (e) => {
@@ -34,6 +43,7 @@ document.getElementById('submit').addEventListener('click', () => {
 
     forms.push({
         id: uuidv4(),
+        gender: f0,
         firstName: f1,
         lastName: f2,
         email: f3,
@@ -42,5 +52,6 @@ document.getElementById('submit').addEventListener('click', () => {
     })
 
     saveForms(forms)
-    alert('Form submitted successfully :-)')
+    console.log('Form submitted successfully!')
+    alert('Your form is submitted successfully ;-)')
 })
