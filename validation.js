@@ -21,8 +21,8 @@ firstName.addEventListener('blur', () => {
         firstName.classList.remove('is-invalid')
         validFirstName = true
     } else{
-        console.log('Your first name is not valid')
         firstName.classList.add('is-invalid')
+        throw Error('Your first name is invalid!')
     }
 })
 
@@ -36,8 +36,8 @@ lastName.addEventListener('blur', () => {
         lastName.classList.remove('is-invalid')
         validLastName = true
     } else {
-        console.log('Your last name is not valid')
         lastName.classList.add('is-invalid')
+        throw Error('Your last name is invalid!')
     }
 })
 
@@ -51,8 +51,8 @@ email.addEventListener('blur', () => {
         email.classList.remove('is-invalid')
         validEmail = true
     } else {
-        console.log('Your email is not valid')
         email.classList.add('is-invalid')
+        throw Error('Your email is invalid!')
     }
 })
 
@@ -66,8 +66,8 @@ mobileNo.addEventListener('blur', () => {
         mobileNo.classList.remove('is-invalid')
         validMobileNo = true
     } else {
-        console.log('Your mobile number is not valid')
         mobileNo.classList.add('is-invalid')
+        throw Error('Your mobile number is not valid!')
     }
 })
 
