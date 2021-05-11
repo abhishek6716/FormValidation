@@ -12,7 +12,6 @@ let validFirstName = false
 let validLastName = false
 let validEmail = false
 let validMobileNo = false
-let isEnable = false
 
 firstName.addEventListener('blur', () => {
     // console.log('first name is blurred')
