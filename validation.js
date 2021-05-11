@@ -11,13 +11,13 @@ let validEmail = false
 let validMobileNo = false
 
 firstName.addEventListener('blur', () => {
-    console.log('first name is blurred')
+    // console.log('first name is blurred')
 
     let regex = /^[a-zA-Z]([0-9a-zA-Z]){2,12}$/
     let str = firstName.value 
-    console.log(regex, str);
+    // console.log(regex, str);
     if(regex.test(str)){
-        console.log('Your first name is valid')
+        // console.log('Your first name is valid')
         firstName.classList.remove('is-invalid')
         validFirstName = true
     } else{
@@ -27,12 +27,12 @@ firstName.addEventListener('blur', () => {
 })
 
 lastName.addEventListener('blur', () => {
-    console.log('last name is blurred')
+    // console.log('last name is blurred')
     let regex = /^[a-zA-Z]([0-9a-zA-Z]){2,12}$/
     let str = lastName.value
-    console.log(regex, str);
+    // console.log(regex, str);
     if (regex.test(str)) {
-        console.log('Your last name is valid')
+        // console.log('Your last name is valid')
         lastName.classList.remove('is-invalid')
         validLastName = true
     } else {
@@ -42,12 +42,12 @@ lastName.addEventListener('blur', () => {
 })
 
 email.addEventListener('blur', () => {
-    console.log('email is blurred')
+    // console.log('email is blurred')
     let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/
     let str = email.value
-    console.log(regex, str);
+    // console.log(regex, str);
     if (regex.test(str)) {
-        console.log('Your email is valid')
+        // console.log('Your email is valid')
         email.classList.remove('is-invalid')
         validEmail = true
     } else {
@@ -57,12 +57,12 @@ email.addEventListener('blur', () => {
 })
 
 mobileNo.addEventListener('blur', () => {
-    console.log('mobile no is blurred')
+    // console.log('mobile no is blurred')
     let regex = /^([0-9]{10}$)/
     let str = mobileNo.value
-    console.log(regex, str);
+    // console.log(regex, str);
     if (regex.test(str)) {
-        console.log('Your mobile number is valid')
+        // console.log('Your mobile number is valid')
         mobileNo.classList.remove('is-invalid')
         validMobileNo = true
     } else {
@@ -72,20 +72,15 @@ mobileNo.addEventListener('blur', () => {
 })
 
 let submit = document.getElementById('submit')
+
 submit.addEventListener('click', (e) => {
     e.preventDefault()
 
-    console.log('you clicked on submit')
+    // console.log('you clicked on submit')
     if(validFirstName && validLastName && validEmail && validMobileNo){
-        console.log('Everything is valid and submitted successfully')
-        let success = document.getElementById('success')
-        success.classList.add('show')
-        success.classList.remove('show')
+        console.log('Everything is valid and form is submitted!')
         
     } else{
-        console,log('Something went wrong! please check again')
-        let failure = document.getElementById('failure')
-        failure.classList.add('show')
-        failure.classList.remove('show')
+        alert('Something is wrong please check again!')
     }
 })
