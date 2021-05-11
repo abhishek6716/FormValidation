@@ -14,6 +14,8 @@ let validLastName = false
 let validEmail = false
 let validMobileNo = false
 
+// submit.disabled = true
+
 firstName.addEventListener('blur', () => {
     // console.log('first name is blurred')
 
@@ -24,6 +26,7 @@ firstName.addEventListener('blur', () => {
         firstName.classList.remove('is-invalid')
         validFirstName = true
     } else {
+        firstName.classList.add('is-invalid')
         validFirstName = false
     }
 })
@@ -36,6 +39,7 @@ lastName.addEventListener('blur', () => {
         lastName.classList.remove('is-invalid')
         validLastName = true
     } else {
+        lastName.classList.add('is-invalid')
         validLastName = false
     }
 })
@@ -48,6 +52,7 @@ email.addEventListener('blur', () => {
         email.classList.remove('is-invalid')
         validEmail = true
     } else {
+        email.classList.add('is-invalid')
         validEmail = false
     }
 })
@@ -62,6 +67,7 @@ mobileNo.addEventListener('blur', () => {
         mobileNo.classList.remove('is-invalid')
         validMobileNo = true
     } else {
+        mobileNo.classList.add('is-invalid')
         validMobileNo = false
     }
 })
@@ -71,54 +77,26 @@ submit.addEventListener('click', (e) => {
 
     if (!validFirstName) {
         $("#firstname").focus();
-        alert("Enter your first name");
+        alert("Enter your valid first name");
     } else if (!validLastName) {
         $("#lastname").focus();
-        alert("Enter your last name");
+        alert("Enter your valid last name");
     } else if (!validEmail) {
         $("#email").focus();
-        alert("Enter your Email");
+        alert("Enter your valid Email");
     } else if (!validMobileNo) {
         $("#mobileno").focus();
-        alert("Enter your Mobile No");
+        alert("Enter your valid Mobile No");
     } else if (address == "") {
         $("#address").focus();
-        alert("Enter your Address");
+        alert("Enter your valid Address");
     } else {
-        alert("data submiteed");
+        console.log(`first name: ${firstName.value}`)
+        console.log(`last name: ${lastName.value}`)
+        console.log(`email: ${email.value}`)
+        console.log(`mobile number: ${mobileNo.value}`)
+        console.log(`address: ${address.value}`)
+
+        alert("Data submited successfully");
     }
-})
-
-let f0
-let f1
-let f2
-let f3
-let f4
-
-firstName.addEventListener('change', (e) => {
-    f0 = e.target.value
-})
-
-lastName.addEventListener('change', (e) => {
-    f1 = e.target.value
-})
-
-email.addEventListener('change', (e) => {
-    f2 = e.target.value
-})
-
-mobileNo.addEventListener('change', (e) => {
-    f3 = e.target.value
-})
-
-address.addEventListener('change', (e) => {
-    f4 = e.target.value
-})
-
-submit.addEventListener('click', (e) => {
-    console.log(`first name: ${f0}`)
-    console.log(`last name: ${f1}`)
-    console.log(`email: ${f2}`)
-    console.log(`mobile number: ${f3}`)
-    console.log(`address: ${f4}`)
 })
