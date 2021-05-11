@@ -6,7 +6,6 @@ const email = document.getElementById('email')
 const mobileNo = document.getElementById('mobileno')
 const submit = document.getElementById('submit')
 
-submit.disabled = true
 
 
 let validFirstName = false
